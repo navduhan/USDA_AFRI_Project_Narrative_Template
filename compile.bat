@@ -44,7 +44,24 @@ exit /b 1
 echo.
 
 echo ========================================================================
-echo Step 1: Compiling Project Narrative
+echo Step 1: Compiling Project Summary
+echo ========================================================================
+echo.
+
+REM Compile ProjectSummary.tex
+%LATEX_CMD% -interaction=nonstopmode ProjectSummary.tex
+if %ERRORLEVEL% NEQ 0 (
+    echo ERROR: Compilation of ProjectSummary.tex failed.
+    pause
+    exit /b 1
+)
+
+echo.
+echo ProjectSummary.pdf created successfully!
+echo.
+
+echo ========================================================================
+echo Step 2: Compiling Project Narrative
 echo ========================================================================
 echo.
 
@@ -75,7 +92,7 @@ echo ProjectNarrative.pdf created successfully!
 echo.
 
 echo ========================================================================
-echo Step 2: Compiling Bibliography (Separate Document)
+echo Step 3: Compiling Bibliography (Separate Document)
 echo ========================================================================
 echo.
 
@@ -90,9 +107,7 @@ if %ERRORLEVEL% NEQ 0 (
 REM Run bibtex
 bibtex Bibliography
 if %ERRORLEVEL% NEQ 0 (
-    echo ERROR: BibTeX failed for Bibliography.
-    pause
-    exit /b 1
+    echo WARNING: BibTeX failed for Bibliography. This is expected if no citations are used yet.
 )
 
 REM Second compilation
@@ -119,9 +134,10 @@ echo ========================================================================
 echo Compilation Complete!
 echo ========================================================================
 echo.
-echo Two PDF files have been created:
-echo   1. ProjectNarrative.pdf - Upload as 'Project Narrative' (max 18 pages)
-echo   2. Bibliography.pdf - Upload as 'Literature Cited' (separate file)
+echo Three PDF files have been created:
+echo   1. ProjectSummary.pdf - Upload as 'Project Summary' (max 1 page)
+echo   2. ProjectNarrative.pdf - Upload as 'Project Narrative' (max 18 pages)
+echo   3. Bibliography.pdf - Upload as 'Literature Cited' (separate file)
 echo.
 
 echo Cleaning up auxiliary files...
@@ -129,10 +145,11 @@ del /Q *.aux *.log *.out *.bbl *.blg *.toc *.fls *.fdb_latexmk *.synctex.gz 2>nu
 
 echo.
 echo Next steps:
-echo   - Review both PDFs for formatting and content
+echo   - Review all PDFs for formatting and content
+echo   - Ensure ProjectSummary.pdf is 1 page
 echo   - Ensure ProjectNarrative.pdf is less than or equal to 18 pages
 echo   - Verify all citations appear in Bibliography.pdf
-echo   - Submit both PDFs separately to grants.gov
+echo   - Submit all three PDFs separately to grants.gov
 echo.
 echo ========================================================================
 echo.

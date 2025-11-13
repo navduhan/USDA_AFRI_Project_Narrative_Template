@@ -1,6 +1,6 @@
 # USDA AFRI Project Narrative Template
 
-**Author:** Naveen Duhan and contributors  
+**Author:** Naveen Duhan  
 **Version:** 1.1  
 **Date:** November 2025
 
@@ -21,6 +21,7 @@ This LaTeX template provides a complete formatting solution for USDA AFRI (Agric
 |------|---------|
 | `usda-afri-narrative.cls` | LaTeX document class (formatting) |
 | `ProjectNarrative.tex` | Main narrative template (max 18 pages) |
+| `ProjectSummary.tex` | Project summary template (max 1 page) |
 | `Bibliography.tex` | Separate bibliography document |
 | `references.bib` | BibTeX database for references |
 | `compile.sh` / `compile.bat` | Automated compilation scripts |
@@ -30,6 +31,7 @@ This LaTeX template provides a complete formatting solution for USDA AFRI (Agric
 ## USDA AFRI Requirements
 
 ### Page Limits
+- **Project Summary:** Maximum **1 page** (required)
 - **Project Narrative:** Maximum **18 pages**
 - **Bibliography:** Submitted as **SEPARATE PDF** (no page limit)
 - The bibliography does NOT count toward the 18-page narrative limit
@@ -57,7 +59,7 @@ Double-click compile.bat
 
 The script will automatically:
 - Use LuaLaTeX (or best available compiler)
-- Compile both ProjectNarrative.pdf and Bibliography.pdf
+- Compile ProjectSummary.pdf, ProjectNarrative.pdf, and Bibliography.pdf
 - Run BibTeX for references
 - Clean up auxiliary files
 - Report page count and any warnings
@@ -81,7 +83,23 @@ pdflatex ProjectNarrative.tex
 
 **Result:** `ProjectNarrative.pdf` (upload as "Project Narrative")
 
-### Step 2: Compile the Bibliography
+### Step 2: Compile the Project Summary
+
+**Recommended (LuaLaTeX):**
+```bash
+lualatex ProjectSummary.tex
+```
+
+**Alternative (XeLaTeX or pdfLaTeX):**
+```bash
+xelatex ProjectSummary.tex
+# or
+pdflatex ProjectSummary.tex
+```
+
+**Result:** `ProjectSummary.pdf` (upload as "Project Summary")
+
+### Step 3: Compile the Bibliography
 
 **Recommended (LuaLaTeX):**
 ```bash
@@ -245,21 +263,25 @@ Adjust in your document or modify class defaults:
 - ? Demonstrate stakeholder engagement
 
 ### Before Submitting
-- [ ] Compiled both ProjectNarrative.pdf and Bibliography.pdf
-- [ ] Project narrative is ? 18 pages
+- [ ] Compiled ProjectSummary.pdf (1 page)
+- [ ] Compiled ProjectNarrative.pdf (? 18 pages)
+- [ ] Compiled Bibliography.pdf (separate file)
+- [ ] Project summary is clear and accessible to non-specialists
 - [ ] All citations in narrative appear in bibliography
 - [ ] Removed all instructional comments
 - [ ] Checked for typos and formatting consistency
 - [ ] Verified all figures and tables are clear
+- [ ] Program Area Priority code matches application forms
 - [ ] Reviewed USDA AFRI program announcement for specific requirements
 
 ## Submission Checklist
 
 Upload to grants.gov:
 
-1. **Project Narrative** ? `ProjectNarrative.pdf` (max 18 pages)
-2. **Literature Cited** ? `Bibliography.pdf` (separate file)
-3. Other required documents as specified in the program announcement
+1. **Project Summary** ? `ProjectSummary.pdf` (max 1 page, required)
+2. **Project Narrative** ? `ProjectNarrative.pdf` (max 18 pages)
+3. **Literature Cited** ? `Bibliography.pdf` (separate file)
+4. Other required documents as specified in the program announcement
 
 ## Support and Customization
 
