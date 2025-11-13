@@ -1,0 +1,50 @@
+\documentclass{usda-afri-narrative}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% USDA AFRI Bibliography (Separate Document)
+%
+% USDA AFRI requires the bibliography to be submitted as a SEPARATE PDF
+% from the main project narrative.
+%
+% IMPORTANT: 
+% - This file should contain ONLY the bibliography/references
+% - Upload this as a separate file from your main narrative PDF
+% - The bibliography does NOT count toward the 18-page narrative limit
+% - Ensure all citations in your narrative appear in references.bib
+%
+% COMPILATION:
+% Recommended: lualatex Bibliography.tex (best Times New Roman font)
+% Alternative: xelatex or pdflatex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LITERATURE CITED / REFERENCES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This section contains all references cited in the Project Narrative.
+%
+% USDA AFRI Requirements:
+% - Submit as a SEPARATE PDF file
+% - Does NOT count toward page limits
+% - Must include ALL sources cited in the narrative
+% - Use a standard citation format (numeric citations recommended)
+%
+% Note: The references below are automatically generated from references.bib
+% based on what you cite in your main ProjectNarrative.tex file using \cite{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Literature Cited}
+\addcontentsline{toc}{section}{Literature Cited}
+
+% The bibliography will appear here, showing only references that are cited
+% in your main ProjectNarrative.tex file (or all references if you use \nocite{*})
+
+% Uncomment the line below if you want to include ALL references from references.bib
+% even if they are not cited in the text:
+% \nocite{*}
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}
